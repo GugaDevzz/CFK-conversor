@@ -1,5 +1,6 @@
 import temp.medida.CelsiusClasse;
-import temp.medida.Fahrenheit;
+import temp.medida.FahrenheitClasse;
+import temp.medida.KelvinClasse;
 
 import java.util.Scanner;
 
@@ -10,20 +11,22 @@ import java.util.Scanner;
         Scanner scanner = new Scanner (System.in);
 
             CelsiusClasse CelsiusClasse = new CelsiusClasse();
-            Fahrenheit Fahrenheit = new Fahrenheit();
+            FahrenheitClasse Fahrenheit = new FahrenheitClasse();
+            KelvinClasse kelvinClasse = new KelvinClasse();
 
+            while (true) {
+                String inicial = "Qual medida deseja converter?";
+                System.out.println(inicial);
+                System.out.println("Celsius, Fahrenheit, Kelvin");
+                String primeiramedida = scanner.nextLine();
 
-            String inicial = "Qual medida deseja converter?";
-
-            System.out.println(inicial);
-            System.out.println("Celsius, Fahrenheit, Kelvin");
-            String primeiramedida = scanner.nextLine();
-
-            if (primeiramedida.equalsIgnoreCase("Celsius")) {
-                double resultadoC = CelsiusClasse.CelciusClassFah();
-            } else if (primeiramedida.equalsIgnoreCase("Fahrenheit")){
-                double resultadoF = Fahrenheit.FahrenheitClass();
-
-        }
+                if (primeiramedida.equalsIgnoreCase("Celsius")) {
+                    double resultadoC = CelsiusClasse.CelciusClassFah();
+                } else if (primeiramedida.equalsIgnoreCase("Fahrenheit")) {
+                    double resultadoF = Fahrenheit.FahrenheitClass();
+                } else if (primeiramedida.equalsIgnoreCase("Kelvin")) {
+                    double resultadoK = kelvinClasse.KelvinClass();
+                }
+            }
     }
 }
